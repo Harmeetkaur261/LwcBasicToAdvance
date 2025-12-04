@@ -1,0 +1,19 @@
+<template>
+    <lightning-card  title ="Account with Opportunity" icon-name="standard:account">
+        <div class="slds-m-around_medium">
+  
+            <template lwc:if={hasData}>
+<lightning-datatable key-field="accountId" data={accountOpp.data} columns={columns}
+hide-checkbox-column="true"
+show-row-number-column="true"
+onrowaction={handleRowAction}>
+
+</lightning-datatable>
+            </template>
+            <template lwc:else>
+                No Data Found
+                </template>
+        </div>
+        </lightning-card>
+
+</template>
