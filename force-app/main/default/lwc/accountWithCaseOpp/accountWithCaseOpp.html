@@ -1,0 +1,37 @@
+<template>
+   <lightning-card title="Account with Cases and Opportunities" icon-name="standard:account">
+       <div class="slds-m-around_medium">
+      <template lwc:if={accountRecord.data}>
+           <lightning-datatable key-field="accountId" data={accountRecord.data} columns={columns}
+                 
+           
+           onrowselection={getRelatedData}
+>
+           
+           </lightning-datatable> 
+        </template>
+        </div>
+        <template lwc:if={showCases}>
+            <div class="slds-m-around_medium">
+                <h2 class="slds-text-heading_medium">Related Cases</h2>
+                <lightning-datatable 
+                    key-field="caseId" 
+                    data={cases} 
+                    columns={caseColumns}>
+                </lightning-datatable>
+            </div>
+        </template>
+
+        <!-- Related Opportunities -->
+        <template lwc:if={showOpportunities}>
+            <div class="slds-m-around_medium">
+                <h2 class="slds-text-heading_medium">Related Opportunities</h2>
+                <lightning-datatable 
+                    key-field="oppId" 
+                    data={opportunities} 
+                    columns={oppColumns}>
+                </lightning-datatable>
+                </div>
+                </template>
+   </lightning-card>
+</template>
