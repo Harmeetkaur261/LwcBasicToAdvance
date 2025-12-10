@@ -1,11 +1,11 @@
-import { LightningElement,wire } from 'lwc';
+import { LightningElement,wire,api } from 'lwc';
 import searchRecord from '@salesforce/apex/customLookupController.searchRecord';
 const DELAY=300;
 export default class CustomLookup extends LightningElement {
-    apiName='Account';
+   @api apiName='Account';
     searchKey;   
-    objectLabel='Account';   
-    iconName="standard:account";   
+   @api objectLabel='Account';   
+   @api iconName="standard:account";   
     delayTimeOut; 
     selectedRecord={
         selectedId:'',
