@@ -36,6 +36,7 @@ clickHandler(event){
     selectedId:outputRecord.Id,
     selectedName:outputRecord.Name
    };
+   this.sendSelectionRecord();
    this.displayOptions=false;
 }
 removeSelectedRecord(event){
@@ -45,8 +46,14 @@ removeSelectedRecord(event){
     };
     
     this.displayOptions=false;
-   
+   this.sendSelectionRecord();
 } 
+sendSelectionRecord(){
+    const selectedEvent=new CustomEvent('selected',{
+        detail:this.selectedRecord.selectedId
+    });
+    this.dispatchEvent(selectedEvent);
+}
 }
 
 
