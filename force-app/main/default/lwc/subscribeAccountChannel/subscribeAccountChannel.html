@@ -1,0 +1,16 @@
+<template>
+    <template lwc:if={recordId}>
+    <lightning-card  title="Account Details">
+        <div class="slds-m-around_medium">
+            <lightning-record-form
+                record-id={recordId}
+                object-api-name="Account"
+                layout-type="Full"
+                mode="readonly"
+                columns="2">
+            </lightning-record-form>
+        </div>
+        </lightning-card>
+               
+    </template>
+</template>

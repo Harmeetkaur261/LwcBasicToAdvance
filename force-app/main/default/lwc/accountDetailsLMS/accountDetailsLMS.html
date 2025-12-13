@@ -1,0 +1,16 @@
+<template>
+    <template lwc:if={accountDetails.data}>
+    <lightning-datatable
+        key-field="accountId"
+        data={accountDetails.data}
+        columns={columns}
+          onrowselection={handleRowSelection}
+         max-row-selection="1"
+    ></lightning-datatable>
+    </template>
+    <template lwc:else>
+        <div class="slds-text-heading_large slds-p-around_medium">
+            No Records Found
+        </div>
+        </template>
+</template>

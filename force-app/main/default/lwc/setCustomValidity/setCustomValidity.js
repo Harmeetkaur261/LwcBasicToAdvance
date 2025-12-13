@@ -5,7 +5,7 @@ export default class SetCustomValidity extends LightningElement {
     handleChange(event) {
         const inputCmp = event.target;
         const value = inputCmp.value;
-      
+      debugger;
 
         // Custom rule: minimum length = 5
         if (value.length < 5) {
