@@ -1,0 +1,57 @@
+<template>
+<lightning-combobox
+    name="account"
+    label="Select Account"
+    placeholder="Select Account"
+    options={accountOptions}
+    value={selectedAccountId}
+    onchange={handleChange}>
+</lightning-combobox>
+<div class="slds-var-p_top-medium">
+        <div class="slds-heading_medium slds-var-p_top-smal ">
+            Related Cases
+        </div>
+        <template lwc:if={cases.length}>
+            <lightning-card title="Related Cases" icon-name="standard:case">
+                <lightning-datatable
+                    key-field="Id"
+                    data={cases}
+                    columns={casesList}>
+                </lightning-datatable>
+            </lightning-card>
+        </template>
+
+        <template lwc:else>
+           <div class="slds-align_absolute-center slds-var-p-vertical_medium">
+        <p class="slds-text-color_weak slds-text-align_center">
+            Related Cases Not Available
+        </p>
+    </div>
+        </template>
+    </div>
+
+    <!-- CONTACTS -->
+    <div class="slds-var-p_top-smal">
+        <div class="slds-heading_medium slds-var-p_top-smal">
+            Related Contacts
+        </div>
+        <template lwc:if={contacts.length}>
+            <lightning-card title="Related Contacts" icon-name="standard:contact">
+                <lightning-datatable
+                    key-field="Id"
+                    data={contacts}
+                    columns={contactsList}>
+                </lightning-datatable>
+            </lightning-card>
+        </template>
+
+        <template lwc:else>
+           <div class="slds-align_absolute-center slds-var-p-vertical_medium">
+        <p class="slds-text-color_weak slds-text-align_center">
+            Related Contacts Not Available
+        </p>
+    </div>
+        </template>
+    </div>
+</template>
+
