@@ -1,0 +1,53 @@
+.track-container {
+    font-family: 'arial', sans-serif;
+    border-radius: 8px;
+    padding: 20px;
+    justify-content: center;
+    margin: 600px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 6px;
+}
+.track-info {
+    display: flex;
+    align-items: center;
+}
+.track-info img {
+   width: 150px;
+   height: 150px;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+.track-details {
+   max-width: 400px;
+
+}
+.track-name{
+    font-size: 1.5em;
+    font-weight: bold;
+    color: green;
+    text-decoration: none;
+}
+.artist-name {
+    font-size: 1.2em;
+    color: #555;
+    margin: 5px 0;
+}
+.popularity {
+    font-size: 1em;
+    color: #444;
+    margin: 10px;
+
+}
+.track-album{
+    font-size: 1em;
+    color: #666;    
+    margin: 5px 0;
+
+}
+.release-date{
+    font-size: 1em;
+    color: #666;    
+    margin: 5px 0;
+
+}
