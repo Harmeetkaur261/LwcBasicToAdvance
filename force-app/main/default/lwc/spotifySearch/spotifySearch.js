@@ -4,7 +4,7 @@ import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 export default class SpotifySearch extends LightningElement {
     searchTerm = '';
     displayResult=false;
-   searchResults ='';
+   searchResults='';
    trackUrl='';
     error;
     handleInputChange(event) {
@@ -16,11 +16,14 @@ export default class SpotifySearch extends LightningElement {
             try{
                 let results = await searchWithSpotify({trackName:this.searchTerm });
                let parsedResults = JSON.parse(results);
-               this.displayResult=true;
-                this.searchResults = parsedResults.tracks.items[0];
-                this.trackUrl=this.searchResults.album.images[0].url;
-               console.log('parsedResults--->',parsedResults);
+            console.log('parsedResults--->',parsedResults);
                
+               this.displayResult=true;
+                this.searchResults =parsedResults.tracks.items[0];
+                console.log('searchResults--->',this.searchResults);
+                this.trackUrl=this.searchResults.album.images[0].url;
+                console.log('trackUrl--->',this.trackUrl);
+         
                 
             }catch(error){
                 this.error = error;
@@ -50,10 +53,10 @@ export default class SpotifySearch extends LightningElement {
 }
 
     get artistName(){
-       let artistNameArr= this.searchResults.artists.map(artist=>{ artist.name
-        });
-        let artistNames= artistNameArr.join(',');
+       let artistNameArr= this.searchResults.artists.map(artist=>artist.name);
+        let artistNames=artistNameArr.join(',');
         return artistNames;
+        
     }
 }
 

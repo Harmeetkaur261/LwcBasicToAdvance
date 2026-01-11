@@ -13,31 +13,18 @@
     </div>
     <template lwc:if={displayResult}>
         <div class="track-container">
-            <div class="track-info">
-                <img src={trackUrl} alt="Track Image" class="album-cover" />
 
-                <div class="track-details">
-                    <a href={searchResults.external_urls.spotify} target="_blank" class="track-name">
-                        {searchResults.name}
-                    </a>
 
-                    <p class="artist-names">
-                        Artists: {artistName}
-                    </p>
+            <img src={trackUrl} alt="Track Image" class="track-info " />
 
-                    <p class="popularity">
-                        Popularity: {searchResults.popularity}
-                    </p>
 
-                    <a href={searchResults.album.external_urls.spotify} target="_blank" class="track-album">
-                        {albumName}
-                    </a>
+            <p class="track-name">Track Name: {searchResults.name}</p>
+            <p class="artist-name">Artist: {artistName}</p>
+            <p class="popularity">Popularity:{searchResults.popularity}</p>
+            <p class="track-album">Album: {searchResults.album.name}</p>
 
-                    <p class="release-date">
-                        Release Date: {releaseDate}
-                    </p>
-                </div>
-            </div>
+            <p class="release-date">Release Date:{searchResults.album.release_date}</p>
+
         </div>
     </template>
 </template>
