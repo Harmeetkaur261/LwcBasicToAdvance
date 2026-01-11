@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Details from Parent Component">
+        <p>First Name: {detailsInChild.firstName}</p>
+        <p>Last Name: {detailsInChild.lastName}</p>
+        <p>Age: {detailsInChild.age}</p>
+        <lightning-button
+            label="Change Age"
+            onclick={handleAgeChange}>
+        </lightning-button>
+    </lightning-card>
+    
+    
+</template>
