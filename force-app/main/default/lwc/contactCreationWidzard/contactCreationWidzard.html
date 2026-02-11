@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="Contact Creation Wizard" icon-name="standard:contact">
+  <div class="slds-p-around_small">
+ <div class="slds-m-bottom_medium">
+     <lightning-progress-indicator current-step={currentStepString} type="path" variant="base">
+        <lightning-progress-step label="Basic Information" value="1"></lightning-progress-step>
+        <lightning-progress-step label="Contact Details" value="2"></lightning-progress-step>
+        <lightning-progress-step label="Review & Submit" value="3"></lightning-progress-step>
+    </lightning-progress-indicator>
+    </div>
+    </div>
+      
+   
+    </lightning-card>
+</template>

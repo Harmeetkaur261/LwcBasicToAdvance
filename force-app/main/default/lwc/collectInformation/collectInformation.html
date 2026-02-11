@@ -1,0 +1,52 @@
+<template>
+    <lightning-card title="User Information">
+        <div class="slds-p-around_medium">
+
+            <!-- Text -->
+            <lightning-input
+                label="Name"
+                type="text"
+                value={name}
+                onchange={handleChange}
+                >
+            </lightning-input>
+
+            <!-- Email -->
+            <lightning-input
+                label="Email"
+                type="email"
+                value={email}
+                onchange={handleChange}
+               >
+            </lightning-input>
+
+            <!-- Phone -->
+            <lightning-input
+                label="Phone"
+                type="tel"
+                value={phone}
+                onchange={handleChange}
+              >
+            </lightning-input>
+
+            <!-- Picklist -->
+            <lightning-combobox
+                label="Country"
+                value={country}
+                options={countryOptions}
+                onchange={handleChange}
+              >
+            </lightning-combobox>
+
+            <!-- Address -->
+            <lightning-textarea
+                label="Address"
+                value={address}
+                onchange={handleChange}
+                >
+            </lightning-textarea>
+           
+
+        </div>
+    </lightning-card>
+</template>

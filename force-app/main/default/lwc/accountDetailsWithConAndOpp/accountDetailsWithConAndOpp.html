@@ -1,0 +1,32 @@
+<template>
+   <lightning-card title="Account Details with Contacts and Opportunities">
+       <lightning-datatable
+           key-field="Id"
+           data={accountData}
+           columns={columns}
+           hide-checkbox-column
+            onrowaction={handleRowClick}
+       ></lightning-datatable>
+    </lightning-card> 
+      <!-- Contacts -->
+    <template if:true={contacts.length}>
+        <lightning-card title="Contacts" class="slds-m-top_medium">
+            <lightning-datatable
+                key-field="Id"
+                data={contacts}
+                columns={contactColumns}>
+            </lightning-datatable>
+        </lightning-card>
+    </template>
+
+    <!-- Opportunities -->
+    <template if:true={opportunities.length}>
+        <lightning-card title="Opportunities" class="slds-m-top_medium">
+            <lightning-datatable
+                key-field="Id"
+                data={opportunities}
+                columns={oppColumns}>
+            </lightning-datatable>
+        </lightning-card>
+    </template>
+</template>
