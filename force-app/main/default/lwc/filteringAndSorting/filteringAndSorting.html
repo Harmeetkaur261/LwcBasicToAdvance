@@ -1,0 +1,35 @@
+<template>
+    <lightning-card title="Contact List with Filtering and Sorting" icon-name="standard:contact">
+        <div class="slds-m-around_medium">
+            <lightning-layout>
+                <lightning-layout-item flexibility="auto" padding="around-small" size="2">
+                   <lightning-combobox name="filterBy" label="Filter By" value={filterBy} options={filterOptions} onchange={handleSortChange}></lightning-combobox>
+                </lightning-layout-item>
+                <lightning-layout-item flexibility="auto" padding="around-small" size="4">
+                    <lightning-input type="text" label="filter" onkeyup={handlekeyUp}></lightning-input>
+                </lightning-layout-item>
+            </lightning-layout>
+            <table class="slds-table slds-table_bordered slds-table_cell-buffer slds-table_fixed-layout">
+                <thead>
+                    <tr class="slds-text-title_caps">
+                        <template for:each={heading} for:item="head">
+                            <th scope="col" key={head}>
+                                <div class="slds-truncate" title={head}>{head}</div>
+                            </th>
+                        </template>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={filterData} for:item="contact">
+                        <tr key={contact.Id}>
+                            <td>{contact.Id}</td>
+                            <td>{contact.Name}</td>
+                            <td>{contact.Email}</td>
+                            <td>{contact.Title}</td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+            </div>
+    </lightning-card>
+    </template>

@@ -1,6 +1,7 @@
 import { LightningElement,wire } from 'lwc';
 import getAccountRecord  from '@salesforce/apex/AccountWithCasesAndOpp.getAccountRecord';
 import getRelatedRecords from '@salesforce/apex/AccountWithCasesAndOpp.getRelatedRecords'; 
+import { encodeDefaultFieldValues } from 'lightning/pageReferenceUtils';
 const columns = [
     {label:'Account Name',fieldName:'name',type:'url',
         typeAttributes:{label:{fieldName:'name'},target:'_blank'}},

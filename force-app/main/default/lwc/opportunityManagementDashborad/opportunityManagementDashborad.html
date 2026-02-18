@@ -1,0 +1,31 @@
+<template>
+    <div class="slds-m-around_medium">
+         <lightning-layout  multiple-rows>
+        <lightning-layout-item size="4">
+            <lightning-combobox
+                name="stage"
+                label="Select Stage"
+                value={selectedStage}
+                placeholder="Select Stage"
+                options={stageOptions}
+                onchange={handleStageChange}
+                
+            ></lightning-combobox>
+           </lightning-layout-item>
+    </lightning-layout>
+     </div>
+     <div class="slds-m-around_medium">
+        <p>Total Amount: {totalAmount}</p>
+    </div>
+    <lightning-datatable
+        key-field="Id"
+        data={data}
+        columns={columns}
+        hide-checkbox-column
+        onrowaction={handleRowAction}
+        draft-values={draftValues}
+        onsave={handleSave}
+        oncancel={handleCancel}
+    >   
+    </lightning-datatable>
+</template>
