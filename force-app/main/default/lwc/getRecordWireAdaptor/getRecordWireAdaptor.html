@@ -1,0 +1,28 @@
+<template>
+    <lightning-card title="WireGetRatingPicklist" icon-name="custom:custom67">
+        <ul class="slds-var-m-around_medium">
+            <template if:true={ratingPickList.data}>
+              <p class="slds-var-m-bottom_medium">Rating Picklist Values:{value}</p>
+          <lightning-combobox
+            name="rating"
+            label="Rating"
+            value={value}
+            placeholder="Select Rating"
+            options={ratingPickList.data.values}
+            onchange={handleChange}
+          ></lightning-combobox>
+          </template>
+          <template if:true={industryvalue.data}>
+            <p class="slds-var-m-bottom_medium">Picklist Values by Record Type</p>
+            <lightning-combobox
+            name="Industry"
+            label="Industry"
+            value={value}
+            placeholder="Select Industry"
+            options={industryvalue.data.Industry.values}
+            onchange={handleChange}
+          ></lightning-combobox>
+          </template>
+        </ul>
+    </lightning-card>
+</template>

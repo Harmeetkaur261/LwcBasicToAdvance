@@ -1,0 +1,47 @@
+<template>
+    <lightning-card title="Create Case">
+
+        <div class="slds-p-around_medium">
+
+            <lightning-record-edit-form
+                object-api-name="Case"
+                onsuccess={handleSuccess}>
+
+                <!-- Contact relationship -->
+                <lightning-input-field
+                    field-name="ContactId"
+                    value={recordId}>
+                </lightning-input-field>
+                lightning-input-field field-name="Name" value="My Field Value">
+        </lightning-input-field>
+        <lightning-button
+            class="slds-m-top_small"
+            type="submit"
+            label="Create new"
+        >
+        </lightning-button>
+
+                <lightning-input-field field-name="CaseNumber"></lightning-input-field>
+
+                <lightning-input-field field-name="Status"></lightning-input-field>
+
+                <lightning-input-field field-name="Priority"></lightning-input-field>
+
+                <lightning-input-field field-name="Description"></lightning-input-field>
+
+                
+
+                <br/>
+
+                <lightning-button
+                    type="submit"
+                    label="Create Case"
+                    variant="brand">
+                </lightning-button>
+
+            </lightning-record-edit-form>
+
+        </div>
+
+    </lightning-card>
+</template>

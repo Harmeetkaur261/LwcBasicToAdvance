@@ -20,6 +20,7 @@ const columns = [
         label: 'Edit',
         name: 'edit',
         variant: 'brand'
+        
     }
 },
 {
@@ -38,7 +39,7 @@ export default class OpportunityManagementDashborad extends NavigationMixin(Ligh
     fullData=[];
     error;
     totalAmount=0;
-    selectedStage="Prospecting";
+    selectedStage="None";
     defaultValues=[];
 @wire(getOpportunityRecord) 
 opportunityData({error, data}){
